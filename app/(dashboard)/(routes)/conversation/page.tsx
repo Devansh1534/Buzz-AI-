@@ -6,7 +6,7 @@ import { Heading } from "@/components/heading"
 import { MessageSquare } from "lucide-react"
 import { useForm } from "react-hook-form"
 import { formSchema } from "./constants";
-import {zodResolver} from '@hookform/resolvers/Zod';
+import {zodResolver} from '@hookform/resolvers/zod';
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
