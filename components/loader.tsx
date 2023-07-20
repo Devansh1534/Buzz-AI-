@@ -12,7 +12,7 @@ const loader = () => {
 
       </div>
       <p className="text-sm text-muted-foreground">
-        Genius is thinking...
+        BUZZ AI is thinking...
       </p>
     </div>
   );

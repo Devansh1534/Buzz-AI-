@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { LayoutDashboard , MessageSquare , ImageIcon, VideoIcon, Music, Code, Settings } from "lucide-react";
+import { LayoutDashboard , MessageSquare , ImageIcon, VideoIcon, Music, Code } from "lucide-react";
 
 const montserrat = Montserrat({
     weight:"600" , 
@@ -65,7 +65,7 @@ const Sidebar = () => {
             />
           </div>
           <h1 className={cn ("text-2xl font-bold" , montserrat.className)}>
-            Genius
+            BUZZ AI
           </h1>
         </Link>
         <div className="space-y-1">

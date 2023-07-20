@@ -28,7 +28,7 @@ export const LandingNavbar = () => {
                     />
                 </div>
                 <h1 className={cn("text-3xl font-bold text-white" , font.className)}>
-                    Genius
+                    BUZZ AI
                 </h1>
             </Link>
             <div className="flex items-center gap-x-2">
