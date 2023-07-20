@@ -106,7 +106,7 @@ const CodePage = () => {
                     >
                         {message.role === "user" ? <UserAvatar /> : <BotAvatar/>}
                         <ReactMarkdown 
-                        className="text-sm overflow-hidden leading-7"
+                        className="text-sm overflow-hidden  leading-7"
                         components={{
                             pre: ({ node, ...props }) => (
                                 <div className="overflow-auto w-full my-2 bg-black/10 p-2 rounded-lg" >
