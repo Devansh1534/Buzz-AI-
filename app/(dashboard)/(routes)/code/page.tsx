@@ -12,7 +12,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { ChatCompletionRequestMessage } from 'openai';
+import  OpenAI  from 'openai';
 import Empty from "@/components/empty";
 import Loader from "@/components/loader";
 import { cn } from "@/lib/utils";
@@ -22,7 +22,7 @@ import ReactMarkdown from "react-markdown";
 
 const CodePage = () => {
     const router = useRouter();
-    const [messages,setMessages] = useState<ChatCompletionRequestMessage[]>([]);
+    const [messages,setMessages] = useState<OpenAI.Chat.CreateChatCompletionRequestMessage[]>([]);
 
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -36,7 +36,7 @@ const CodePage = () => {
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
        try{
-        const userMessage: ChatCompletionRequestMessage = {
+        const userMessage: OpenAI.Chat.CreateChatCompletionRequestMessage = {
            role: "user",
            content: values.prompt ,
         };
@@ -95,11 +95,11 @@ const CodePage = () => {
                     <Loader />
                 </div>
             )}
-            {messages.length=== 0 && !isLoading && (
+            { messages.length=== 0 && !isLoading && (
                 <Empty label="No Conversation Started" />
             )}
             <div className="flex flex-col-reverse gap-y-4">
-                {messages.map((message) => (
+                {messages.slice().reverse().map((message) => (
                     <div 
                     key={message.content}
                     className={cn("p-8 w-full flex items-start gap-x-8 rounded-lg" , message.role === "user" ? "bg-white border border-black/10" : "bg-muted")}
